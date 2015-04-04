@@ -2,16 +2,13 @@ package com.example.hellouniverse;
 
 import android.app.Activity;
 import android.os.Bundle;
-import android.os.Handler;
-import android.util.Log;
-import android.widget.ImageButton;
-import android.widget.SeekBar;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
 import android.net.Uri;
 import android.content.ContentResolver;
 import android.database.Cursor;
+import android.widget.ImageButton;
 import android.widget.ListView;
 import android.os.IBinder;
 import android.content.ComponentName;
@@ -30,6 +27,7 @@ public class MyActivity extends Activity {
     private ArrayList<Song> songList;
     private ListView songView;
     public static int singelton = 0;
+    ImageButton exit, shuf;
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -46,6 +44,10 @@ public class MyActivity extends Activity {
         });
         SongMap sM = new SongMap(this, songList);
         songView.setAdapter(sM);
+        exit = (ImageButton)findViewById(R.id.end);
+        shuf = (ImageButton)findViewById(R.id.suffle);
+        addListenerOnButton();
+
 
     }
     public void onStart(){
@@ -104,9 +106,9 @@ public class MyActivity extends Activity {
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         switch(item.getItemId()){
-            case R.id.action_shuffle:
+            case R.id.suffle:
                 break;
-            case R.id.action_exit:
+            case R.id.end:
                 stopService(intnt);
                 mediaService = null;
                 System.exit(0);
@@ -120,6 +122,20 @@ public class MyActivity extends Activity {
         stopService(intnt);
         mediaService = null;
         super.onDestroy();
+    }
+
+    public void addListenerOnButton() {
+
+        exit.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View arg0) {
+                stopService(intnt);
+                mediaService = null;
+                System.exit(0);
+            }
+
+        });
     }
 
 }

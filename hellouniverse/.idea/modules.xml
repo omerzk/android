@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$USER_HOME$/Desktop/cs/android/hellouniverse/hellouniverse.iml" filepath="$USER_HOME$/Desktop/cs/android/hellouniverse/hellouniverse.iml" />
+      <module fileurl="file://$PROJECT_DIR$/hellouniverse.iml" filepath="$PROJECT_DIR$/hellouniverse.iml" />
     </modules>
   </component>
 </project>

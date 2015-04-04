@@ -7,17 +7,28 @@
               android:orientation="vertical">
     <ListView
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="456dp"
             android:id="@+id/listView" android:layout_gravity="center_horizontal"/>
-    <ImageButton
-            android:src="@drawable/shuffle"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/action_shuffle"/>
-    <ImageButton
-            android:src="@drawable/exit"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/action_exit" android:layout_gravity="right"/>
+
+    <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent" >
+
+        <ImageButton
+                android:src="@drawable/end"
+                android:layout_width="101dp"
+                android:layout_height="75dp"
+                android:background="#ff335e56"
+                android:id="@+id/end"/>
+        <ImageButton
+                android:src="@drawable/shuf"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/suffle"
+                android:background="#ff335e56"
+                android:layout_gravity="right"/>
+    </LinearLayout>
+
 </LinearLayout>
 
